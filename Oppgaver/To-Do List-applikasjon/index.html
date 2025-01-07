@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="init()">
+
+    <div id="app">
+        <div class="container" class="container">
+            <h1>To-Do List</h1>
+                <select>
+                    <option value="all">All</option>
+                    <option value="done">Done</option>
+                    <option value="not-done">To do</option>
+                </select> <br/> 
+        
+                <table id="tasksTable"></table>
+
+                <input type="text" id="taskInput" placeholder="Add a new task">
+                <p>
+                <button onclick="addNewTask()">Add new task</button> <br/>
+                </p>
+            </div>
+    </div>
+
+    <script src="./model.js"></script>
+    <script src="./view.js"></script>
+    <script src="./controller.js"></script>
+</body>
+</html>
+
+  <!-- Beskrivelse:
+Lag en dynamisk To-Do List-applikasjon hvor brukeren kan:
+
+Legge til oppgaver
+Slette oppgaver
+Markere oppgaver som fullførte
+Filtrere oppgaver (f.eks. "alle", "fullførte", "ikke fullførte")
+
+
+Ekstra Utfordringer:
+
+Implementere lagring av oppgaver i localStorage for å bevare data mellom besøk.
+Bruke MVC-strukturen for å separere logikk, visning og data.
+ -->
