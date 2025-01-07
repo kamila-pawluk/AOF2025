@@ -1,0 +1,71 @@
+body{
+    background-color: #85d2ef;
+}
+/* Styl dla kontenera pytania */
+.questionContainer {
+    background-color: #f0f8ff; /* Jasny niebieski dla kontrastu */
+    border: 2px solid #007acc; /* Nieco ciemniejszy niebieski dla ramki */
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;    
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333333; /* Ciemnoszary kolor tekstu */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%; 
+}
+
+/* Styl dla kontenera odpowiedzi */
+.answersContainer {
+    background-color: #80bcf0; /* Jasny niebieski dla kontrastu */
+    border: 2px solid #007acc; /* Nieco ciemniejszy niebieski dla ramki */
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;    
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333333; /* Ciemnoszary kolor tekstu */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%; 
+}
+
+.answersContainer input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Styl dla przycisku Submit */
+.submitButton {
+    background-color: #28a745; /* Zielony dla pozytywnego wrażenia */
+    color: #ffffff; /* Biały tekst */
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin: auto;
+    align-self: center;
+    display: block;
+    width: 20%;
+}
+
+.submitButton:hover {
+    background-color: #218838; 
+}
+.answerCorrectness {
+    font-size: 18px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.answerCorrectness.correct {
+    color: #28a745; /* Zielony kolor dla poprawnej odpowiedzi */
+}
+
+.answerCorrectness.incorrect {
+    color: #dc3545; /* Czerwony kolor dla błędnej odpowiedzi */
+}
