@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div id="loadingPage" class="startPageContainer">
+            Loading...
+        </div>
+        <div id="startPage" class="startPageContainer" style="display: none;">
+            <button id="startButton" onclick="updateView()" class="startQuizButton" >Start quiz</button>
+        </div>
+    </div>
+    <div id="app" class="container">
+    </div>
+           
+   
+
+    <script src="./model.js"></script>
+    <script src="./view.js"></script>
+    <script src="./controller.js"></script>
+    <script src="./workers.js"></script>
+    <script src="./fetchData.js"></script>
+</body>
+</html>
+
+ <!-- Beskrivelse:
+Lag et quiz-spill hvor brukeren får spørsmål med flervalgssvar. Etter å ha valgt et svar, får brukeren vite om det var riktig eller feil.
+Legg til en poengteller og vis resultatet på slutten.
+
+Ekstra Utfordringer:
+
+Hent spørsmålene fra en ekstern JSON-fil eller API (f.eks. Open Trivia Database).
+Implementer en timer for hvert spørsmål.
+Bruk objekter for å strukturere spørsmål og svar. -->
