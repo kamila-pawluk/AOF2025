@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guests book</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div id="app">
+        <h1>Guests book</h1>
+
+        <form id="form" class="form">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="message" placeholder="Message">
+            <button id="submit" onclick="addGuest()">Submit</button>
+        </form>
+
+        <div  class="searchDiv">
+            <input type="text" id="search"placeholder="Search">
+            <button id="searchButton" onclick="findByMessage()">Find by message</button>
+        </div>
+        
+        <div id="messages" class="messagesDiv">
+        Messages: 
+        </div>
+    </div>
+    
+    <script src="./script/model.js"></script>
+    <script src="./script/view.js"></script>
+    <script src="./script/controller.js"></script>
+</body>
+</html>
