@@ -1,32 +1,190 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
     background-color: #eff6f4;
     display: flex;
     flex-direction: column;
-    /* width: 80vw;
-    height: 80vh; */
-    margin-left: 30%;
-    margin-top: 10%;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-#form{
+.container {
+    width: 85%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#form, #searchDiv {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#form {
     background-color: #986868;
-    padding: 20px;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    width: 50%;   
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
-#searchDiv{
-    background-color: #ce7b7b;
-    padding: 20px;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    width: 50%;   
+
+#searchDiv {
+    background-color: white;
+    border: 1px solid #000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
 }
-#messagesDiv{
+
+#form input, #searchDiv input {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+#form button, #searchDiv button {
+    padding: 8px 12px;
+    background-color: #5c3c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#form button:hover, #searchDiv button:hover {
+    background-color: #422727;
+}
+
+#messagesDiv {
     background-color: #e0b0b0;
-    padding: 20px;
-    border: 2px solid #000000;
+    padding: 15px;
+    border: 1px solid #000;
     border-radius: 10px;
-    width: 50%;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    max-width: 700px;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+thead {
+    background-color: #986868;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+}
+
+thead tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    text-align: center;
+}
+
+th:nth-child(1), td:nth-child(1) { width: auto; } /* Guest name */
+th:nth-child(2), td:nth-child(2) { width: auto; } /* Message */
+th:nth-child(3), td:nth-child(3) { width: 15%; } /* Date */
+th:nth-child(4), td:nth-child(4) { width: 20%; text-align: center; } /* Change */
+th:nth-child(5), td:nth-child(5) { width: 20%; text-align: center; } /* Delete */
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+
+
+td button {
+    padding: 6px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    width: 45%;
+    min-width: 100px;
+}
+
+td button:first-child {
+    background-color: #b35c5c;
+    color: white;
+}
+
+td button:first-child:hover {
+    background-color: #8a3f3f;
+}
+
+td button:last-child {
+    background-color: #b33a3a;
+    color: white;
+}
+
+td button:last-child:hover {
+    background-color: #8a2a2a;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #form, #searchDiv {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    table {
+        font-size: 13px;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+    td button {
+        width: auto;
+        min-width: unset;
+    }
 }

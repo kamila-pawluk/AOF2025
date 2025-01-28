@@ -17,13 +17,24 @@
             <button id="submit" onclick="addGuest()">Submit</button>
         </form>
 
-        <div  class="searchDiv">
+        <div  id="searchDiv" class="searchDiv">
             <input type="text" id="search"placeholder="Search">
             <button id="searchButton" onclick="findByMessage()">Find by message</button>
         </div>
         
         <div id="messages" class="messagesDiv">
-        Messages: 
+            <table id="guestTable">
+                <thead>
+                    <tr>
+                        <th>Guest name</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                        <th>Change</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="guestBook"></tbody>
+            </table>
         </div>
     </div>
     

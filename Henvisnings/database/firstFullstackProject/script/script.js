@@ -1,6 +1,15 @@
+function getAuthHeader(){
+    const token = localStorage.getItem('token');
+    return {
+        'Authorization' : `Bearer ${token}`, 
+        'Content-Type' : 'application/json'
+    };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 console.log('Page loaded, attempting to load tasks...');
-loadTask();
+toogleDarkMode();
+loadTasks();
 
     document.getElementById('todo-form').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -12,13 +21,12 @@ loadTask();
             deadline: document.getElementById('deadline').value || null
             };
         console.log('Task to be added:', task);
+        console.log(getAuthHeader(), ' ', task )
     
         try{
             const response = await fetch('http://localhost:5000/tasks', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: getAuthHeader(),
                 body: JSON.stringify(task)
             });
             if(!response.ok){
@@ -28,15 +36,51 @@ loadTask();
             console.log('Server response:', result);
 
             document.getElementById('todo-form').reset();
-            loadTask();
+            loadTasks();
         }   catch(error){
             console.error('Error adding task:', error);
+            if (error.status === 401){
+                window.location.href = 'index.html';
+                return;
+            }
             alert('Failed to add task, Please try again!');
         }
 });
 });
 
-async function loadTask() {
+document.getElementById('logout-btn').addEventListener('click', () => {
+    localStorage.removeItem('token');
+    window.location.href = 'index.html';
+})
+
+//Dark mode functionality
+function toogleDarkMode(){
+    const themeToggle = document.getElementById('theme-toogle');
+    const themeIcon = themeToggle.querySelector('i');
+
+    if(localStorage.getItem('darkMode') === 'true'){
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if(document.body.classList.contains("dark-mode")){
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('darkMode', 'false');
+        }
+    });
+}
+
+
+async function loadTasks() {
+    console.log(getAuthHeader());
     try{
         console.log('Fetching tasks from server...')
         const response = await fetch('http://localhost:5000/tasks');
@@ -58,6 +102,9 @@ async function loadTask() {
             todoList.appendChild(taskElement);
         });
     } catch (error){
+        if (error.status === 401){
+            window.location.href = 'index.html';
+        }
         console.error('Error loading tasks: ', error);
         const todoList = document.getElementById('todo-list');
         todoList.innerHTML = '<div class="error-message">Unable to load tasks. Please make sure the server is running</div>';
@@ -90,19 +137,19 @@ async function toogleComplete(id, completed){
     try{
         const response = await fetch(`http://localhost:5000/tasks/${id}`, {
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                completed: !completed
-            })
+            headers: getAuthHeader(),
+            body: JSON.stringify({completed})
         });
         if(!response.ok){
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        loadTask();
+        loadTasks();
     } catch (error){
         console.error('Error updating task:', error);
+        if(error.status === 401){
+            window.location.href = 'index.html';
+            return;
+        }
         alert('Failed to update task. Please try again!');
     }
 }
@@ -111,14 +158,19 @@ async function deleteTask(id){
     if(!confirm('Are you sure you want to delete this task?')){
         try{
             const response = await fetch(`http://localhost:5000/tasks/${id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: getAuthHeader()
             });
             if(!response.ok){
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            loadTask();
+            loadTasks();
         } catch (error){
             console.error('Error deleting task:', error);
+            if(error.status === 401){
+                window.location.href = 'index.html';
+                return;
+            }
             alert('Failed to delete task. Please try again!');
         }
     }
