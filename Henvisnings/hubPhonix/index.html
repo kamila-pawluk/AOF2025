@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Phønix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="updateView('MainPage')">
+
+    <header>
+        <img src="" alt="">
+        <h1>HUB Phonix</h1>
+    </header>
+    <nav>
+        <button onclick="updateView('AboutPage')">Om oss</button>
+        <button onclick="updateView('MainPage')">Hovedside</button>
+        <button onclick="">Kontakt oss</button>
+        <button onclick="">Nyhetsbrev</button>
+        <button onclick="">Ressurser</button>
+        <button onclick="">Tjenester og Aktiviteter</button>
+        <button onclick="">Booking</button>
+        <button onclick="">Facebook Feed</button>
+    </nav>
+    <main id="main"></main>
+    <footer></footer>
+
+    <!-- Global JS -->
+    <script src="script/model.js"></script>
+    <script src="script/view.js"></script>
+    <script src="script/controller.js"></script>
+
+    <!-- Main page -->
+     <script src="Pages/Main Page/mainView.js"></script>
+     <script src="Pages/Main Page/mainController.js"></script>
+
+     <!-- About page -->
+      <script src="Pages/About Page/aboutView.js"></script>
+      <script src="Pages/About Page/aboutController.js"></script>
+
+     <!-- Services and Activities page -->
+      <script src="Pages/Services and Activity Page/servicesActivityView.js"></script>
+      <script src="Pages/Services and Activity Page/servicesActivityController.js"></script>
+
+     <!-- Booking page -->
+      <script src="Pages/Booking Page/bookingView.js"></script>
+      <script src="Pages/Booking Page/bookingController.js"></script>
+
+     <!-- Newsfeed page -->
+      <script src="Pages/Newsfeed Page/newsfeedView.js"></script>
+      <script src="Pages/Newsfeed Page/newsfeedController.js"></script>
+      
+     <!-- FacebookFeed page -->
+      <script src="Pages/FacebookFeed Page/facebookFeedView.js"></script>
+      <script src="Pages/FacebookFeed Page/facebookFeedController.js"></script>
+
+     <!-- Resource page -->
+      <script src="Pages/Resource Page/resourceView.js"></script>
+      <script src="Pages/Resource Page/resourceController.js"></script>
+
+    <!-- Contact page -->
+      <script src="Pages/Contact Page/contactView.js"></script>
+      <script src="Pages/Contact Page/contactController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eff6f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.buttons{
+    background-color: #986868;
+    color: white;
+    border:1px solid #986868;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.addEventContainer{
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid #986868;
+    border-radius: 5px;
+    background-color: #af7c7c;
+}
+
+.eventsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid #986868;
+}
+table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+thead {
+    background-color: #986868;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+}
+
+thead tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    text-align: center;
+}
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    display: table;
+    padding: 40px;
+    width: 100%;
+    table-layout: fixed;
+}
+th, td {
+    padding: 30px;
+    text-align:center ;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}

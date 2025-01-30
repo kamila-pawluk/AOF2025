@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Time planner</h1>
+    <form id="addEventForm" class="addEventContainer">
+        <input type="text" id="eventInput" placeholder="Add new assignment">
+        <input type="date" id="startDateInput" placeholder="Enter start date">
+        <input type="date" id="deadlineInput" placeholder="Enter deadline">
+        <select name="contributorName" id="contributorName" required>
+            <option value="" disabled selected>Choose name</option>
+            <option value="John">John</option>
+            <option value="Mike">Mike</option>
+            <option value="Anna">Anna</option>
+        </select>
+    </form>
+        <button id="addEventButton" class="buttons">Add assignment</button><br/>
+
+    <p>
+        <button id="showPreviousMonth" class="buttons"> Previous month </button>
+        <button id="showNextMonth" class="buttons">Next month</button>
+    </p>
+
+    <div id="container" ></div>
+
+    <br> <div id="eventsContainer">
+        <table> 
+            <tr>
+                <th>Event name</th>
+                <th>Start date</th>
+                <th>Deadline</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- Tidsplanlegger (Oppgave: Organiser dagene dine)
+
+Beskrivelse:
+Lag en kalenderapplikasjon der brukeren kan legge inn avtaler og se dagens eller ukens oppgaver.
+Bruk tabeller eller grid-layout for å vise kalenderen.
+
+Ekstra Utfordringer:
+Implementere dra-og-slipp-funksjonalitet for å flytte avtaler.
+Integrere lagring via localStorage eller et REST API. -->
