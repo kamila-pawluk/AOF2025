@@ -8,6 +8,14 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
+.buttonsContainer{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
 .buttons{
     background-color: #986868;
     color: white;
@@ -80,4 +88,12 @@ th, td {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
+}
+
+eventCard {
+
+}
+
+rowColor{
+
 }

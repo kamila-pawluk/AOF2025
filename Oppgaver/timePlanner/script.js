@@ -3,12 +3,43 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 document.getElementById('addEventButton').addEventListener('click', function(){
-   let event = document.getElementById('eventInput').value;
-   let startDate = document.getElementById('startDateInput').toLocaleDateString();
-   let endDate = document.getElementById('deadlineInput').toLocaleDateString();
-   let contributor = dc
+    createEventCard();
 });
 
+function createEventCard (){
+    let eventName = document.getElementById('eventInput').value;
+    let startDate = document.getElementById('startDateInput').value;
+    let endDate = document.getElementById('deadlineInput').value;
+    let contributor = document.getElementById('contributorName').value;
+
+    // var card  = /* HTML*/ `
+        // <td> <span class="eventCard" id="eventCard">Event</span></td>`;
+
+   addEventToTheList(eventName, startDate, endDate, contributor);
+   createNewTask();
+
+}
+
+function addEventToTheList (eventName, startDate, endDate, contributor){
+    const contributorColor = {
+        "John" : "#ffcccc",
+        "Mike": "#ccddcc",
+        "Anna": "#ccccff",
+        "default": "#f0f0f0"
+    };
+
+    let bgColor = contributorColor[contributor] || contributorColor["default"];
+
+    let newRow = /*HTML*/ `
+    <tr style="background-color: ${bgColor}" data-id="${task.id}">
+        <td id="eventName">${task.eventName}</td>
+        <td id="startDate">${task.startDate}</td>
+        <td id="endDate">${task.endDate}</td>
+        <td><button onclick="taskDone(${task.id})">Change status</button></td>
+    </tr> `;
+
+    document.getElementById('taskTable').innerHTML += newRow;
+}
 
 function createCalendar(){
     let date = new Date();

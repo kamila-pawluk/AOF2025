@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h1>Time planner</h1>
+    
+    <h1>Task planner</h1>
     <form id="addEventForm" class="addEventContainer">
         <input type="text" id="eventInput" placeholder="Add new assignment">
         <input type="date" id="startDateInput" placeholder="Enter start date">
@@ -20,28 +20,43 @@
             <option value="Anna">Anna</option>
         </select>
     </form>
-        <button id="addEventButton" class="buttons">Add assignment</button><br/>
-
-    <p>
+    <button id="addEventButton" class="buttons">Add assignment</button><br/>
+     
+    <p class="buttonsContainer">
         <button id="showPreviousMonth" class="buttons"> Previous month </button>
         <button id="showNextMonth" class="buttons">Next month</button>
     </p>
 
-    <div id="container" ></div>
+    <!-- Here comes calendar based on the todays date -->
+    <div id="container" ></div> 
 
     <br> <div id="eventsContainer">
-        <table> 
+        <table id="taskTable"> 
             <tr>
                 <th>Event name</th>
                 <th>Start date</th>
                 <th>Deadline</th>
+                <th>Done</th>
             </tr>
         </table>
     </div>
 
-    <script src="script.js"></script>
+
+    <script src="./script.js"></script>
+    <script src="./fetching.js"></script>
 </body>
 </html>
+
+
+<!-- TODO:
+ - clear up the input after adding assignment
+ - add card in the calendar
+ - drag and drop function to the card
+ - save the assignments to the localStorage
+
+
+
+-->
 
 
 <!-- Tidsplanlegger (Oppgave: Organiser dagene dine)
